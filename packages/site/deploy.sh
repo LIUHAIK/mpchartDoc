@@ -13,7 +13,7 @@ git init
 git add -A
 git commit -m 'deploy'
 
-# 意思为将master构建后的代码合并到gh-pages分支上，然后在gh-pages分支上部署~
-#git push -f https://github.com/0604hx/grid-form.git master:gh-pages
+# 意思为将main构建后的代码合并到gh-pages分支上，然后在gh-pages分支上部署~
+git push -f https://github.com/LIUHAIK/mpchartDoc.git master:gh-pages
 
 cd -
