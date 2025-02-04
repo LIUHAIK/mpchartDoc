@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MpChart 图表库</title>
+    <meta name="description" content="支持多种类型的OpenHarmony图表库">
+    <meta name="generator" content="VitePress v1.5.0">
+    <link rel="preload stylesheet" href="/mpchartDoc/assets/style.CVtnsjRT.css" as="style">
+    <link rel="preload stylesheet" href="/mpchartDoc/vp-icons.css" as="style">
+    
+    <script type="module" src="/mpchartDoc/assets/app.Du2NtOPC.js"></script>
+    <link rel="preload" href="/mpchartDoc/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="modulepreload" href="/mpchartDoc/assets/chunks/theme.DI941Nqr.js">
+    <link rel="modulepreload" href="/mpchartDoc/assets/chunks/framework.CS1J3kmr.js">
+    <link rel="modulepreload" href="/mpchartDoc/assets/guide_bar-chart.md.Daw-mIWe.lean.js">
+    <link rel="icon" href="/mpchartDoc/logo.svg">
+    <script>window._hmt=window._hmt||[],function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2011a384a05d083dddbac20462902ad2";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();</script>
+    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+  </head>
+  <body>
+    <div id="app"><div class="Layout" data-v-61838855><!--[--><!--]--><!--[--><span tabindex="-1" data-v-94b65a7f></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-94b65a7f> Skip to content </a><!--]--><!----><header class="VPNav" data-v-61838855 data-v-3856a46f><div class="VPNavBar" data-v-3856a46f data-v-a7bbe78c><div class="wrapper" data-v-a7bbe78c><div class="container" data-v-a7bbe78c><div class="title" data-v-a7bbe78c><div class="VPNavBarTitle has-sidebar" data-v-a7bbe78c data-v-f6dc55b7><a class="title" href="/mpchartDoc/" data-v-f6dc55b7><!--[--><!--]--><!--[--><img class="VPImage logo" src="/mpchartDoc/logo.svg" alt data-v-0dc51e23><!--]--><span data-v-f6dc55b7>MpChart 图表库</span><!--[--><!--]--></a></div></div><div class="content" data-v-a7bbe78c><div class="content-body" data-v-a7bbe78c><!--[--><!--]--><div class="VPNavBarSearch search" data-v-a7bbe78c><!----></div><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-a7bbe78c data-v-1b1bc202><span id="main-nav-aria-label" class="visually-hidden" data-v-1b1bc202> Main Navigation </span><!--[--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/mpchartDoc/" tabindex="0" data-v-1b1bc202 data-v-6896f585><!--[--><span data-v-6896f585>首页</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/mpchartDoc/guide/getting-started" tabindex="0" data-v-1b1bc202 data-v-6896f585><!--[--><span data-v-6896f585>文档</span><!--]--></a><!--]--><!--]--></nav><!----><div class="VPNavBarAppearance appearance" data-v-a7bbe78c data-v-a74eb79a><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-a74eb79a data-v-e6b184f6 data-v-7f59d61f><span class="check" data-v-7f59d61f><span class="icon" data-v-7f59d61f><!--[--><span class="vpi-sun sun" data-v-e6b184f6></span><span class="vpi-moon moon" data-v-e6b184f6></span><!--]--></span></span></button></div><div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-a7bbe78c data-v-9d7f7067 data-v-1a68256d><!--[--><a class="VPSocialLink no-icon" href="https://gitee.com/openharmony-tpc/ohos_mpchart" aria-label="gitee" target="_blank" rel="noopener" data-v-1a68256d data-v-a4ba958f><span class="vpi-social-gitee"></span></a><!--]--></div><div class="VPFlyout VPNavBarExtra extra" data-v-a7bbe78c data-v-8e273dd0 data-v-241e04af><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-241e04af><span class="vpi-more-horizontal icon" data-v-241e04af></span></button><div class="menu" data-v-241e04af><div class="VPMenu" data-v-241e04af data-v-f94e8b53><!----><!--[--><!--[--><!----><div class="group" data-v-8e273dd0><div class="item appearance" data-v-8e273dd0><p class="label" data-v-8e273dd0>Appearance</p><div class="appearance-action" data-v-8e273dd0><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-8e273dd0 data-v-e6b184f6 data-v-7f59d61f><span class="check" data-v-7f59d61f><span class="icon" data-v-7f59d61f><!--[--><span class="vpi-sun sun" data-v-e6b184f6></span><span class="vpi-moon moon" data-v-e6b184f6></span><!--]--></span></span></button></div></div></div><div class="group" data-v-8e273dd0><div class="item social-links" data-v-8e273dd0><div class="VPSocialLinks social-links-list" data-v-8e273dd0 data-v-1a68256d><!--[--><a class="VPSocialLink no-icon" href="https://gitee.com/openharmony-tpc/ohos_mpchart" aria-label="gitee" target="_blank" rel="noopener" data-v-1a68256d data-v-a4ba958f><span class="vpi-social-gitee"></span></a><!--]--></div></div></div><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-a7bbe78c data-v-e89d4fee><span class="container" data-v-e89d4fee><span class="top" data-v-e89d4fee></span><span class="middle" data-v-e89d4fee></span><span class="bottom" data-v-e89d4fee></span></span></button></div></div></div></div><div class="divider" data-v-a7bbe78c><div class="divider-line" data-v-a7bbe78c></div></div></div><!----></header><div class="VPLocalNav has-sidebar empty" data-v-61838855 data-v-c9f47dcd><div class="container" data-v-c9f47dcd><button class="menu" aria-expanded="false" aria-controls="VPSidebarNav" data-v-c9f47dcd><span class="vpi-align-left menu-icon" data-v-c9f47dcd></span><span class="menu-text" data-v-c9f47dcd>Menu</span></button><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-v-c9f47dcd data-v-5c3653d5><button data-v-5c3653d5>Return to top</button><!----></div></div></div><aside class="VPSidebar" data-v-61838855 data-v-2780cfd6><div class="curtain" data-v-2780cfd6></div><nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1" data-v-2780cfd6><span class="visually-hidden" id="sidebar-aria-label" data-v-2780cfd6> Sidebar Navigation </span><!--[--><!--]--><!--[--><div class="no-transition group" data-v-7e376329><section class="VPSidebarItem level-0 has-active" data-v-7e376329 data-v-723ed679><div class="item" role="button" tabindex="0" data-v-723ed679><div class="indicator" data-v-723ed679></div><h2 class="text" data-v-723ed679>使用说明</h2><!----></div><div class="items" data-v-723ed679><!--[--><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/getting-started" data-v-723ed679><!--[--><p class="text" data-v-723ed679>快速开始 / Start</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/bar-chart" data-v-723ed679><!--[--><p class="text" data-v-723ed679>柱状图 / BarChart</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/line-chart" data-v-723ed679><!--[--><p class="text" data-v-723ed679>线形图 / LineChart</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/pie-chart" data-v-723ed679><!--[--><p class="text" data-v-723ed679>饼状图 / PieChart</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/bubble-chart" data-v-723ed679><!--[--><p class="text" data-v-723ed679>气泡图 / BubbleChart</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/candle-chart" data-v-723ed679><!--[--><p class="text" data-v-723ed679>蜡烛图 / CandleChart</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/combined-chart" data-v-723ed679><!--[--><p class="text" data-v-723ed679>组合图 / CombinedChart</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/radar-chart" data-v-723ed679><!--[--><p class="text" data-v-723ed679>雷达图 / RadarChart</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/scatter-chart" data-v-723ed679><!--[--><p class="text" data-v-723ed679>散点图 / ScatterChart</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/waterfall-chart" data-v-723ed679><!--[--><p class="text" data-v-723ed679>瀑布图 / WaterfallChart</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><div class="no-transition group" data-v-7e376329><section class="VPSidebarItem level-0" data-v-7e376329 data-v-723ed679><div class="item" role="button" tabindex="0" data-v-723ed679><div class="indicator" data-v-723ed679></div><h2 class="text" data-v-723ed679>接口说明</h2><!----></div><div class="items" data-v-723ed679><!--[--><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/api-ChartModel" data-v-723ed679><!--[--><p class="text" data-v-723ed679>1.ChartModel</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/api-BarLineChartBaseModel" data-v-723ed679><!--[--><p class="text" data-v-723ed679>2.BarLineChartBaseModel</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/api-ComponentBase" data-v-723ed679><!--[--><p class="text" data-v-723ed679>3.ComponentBase</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/api-AxisBase" data-v-723ed679><!--[--><p class="text" data-v-723ed679>4.AxisBase</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/api-XAxis" data-v-723ed679><!--[--><p class="text" data-v-723ed679>5.XAxis</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/api-YAxis" data-v-723ed679><!--[--><p class="text" data-v-723ed679>6.YAxis</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/api-MarkerView" data-v-723ed679><!--[--><p class="text" data-v-723ed679>7.自定义MarkerView传入</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/api-WaterfallDataSet" data-v-723ed679><!--[--><p class="text" data-v-723ed679>8.WaterfallDataSet</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/api-ChartData" data-v-723ed679><!--[--><p class="text" data-v-723ed679>9.ChartData</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/api-BarLineScatterCandleBubbleDataSet" data-v-723ed679><!--[--><p class="text" data-v-723ed679>10.BarLineScatterCandleBubbleDataSet</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/api-LineScatterCandleRadarDataSet" data-v-723ed679><!--[--><p class="text" data-v-723ed679>11.LineScatterCandleRadarDataSet</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><div class="no-transition group" data-v-7e376329><section class="VPSidebarItem level-0" data-v-7e376329 data-v-723ed679><div class="item" role="button" tabindex="0" data-v-723ed679><div class="indicator" data-v-723ed679></div><h2 class="text" data-v-723ed679>常见问题</h2><!----></div><div class="items" data-v-723ed679><!--[--><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/faqs" data-v-723ed679><!--[--><p class="text" data-v-723ed679>常见问题 / FAQ</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><div class="no-transition group" data-v-7e376329><section class="VPSidebarItem level-0" data-v-7e376329 data-v-723ed679><div class="item" role="button" tabindex="0" data-v-723ed679><div class="indicator" data-v-723ed679></div><h2 class="text" data-v-723ed679>其它</h2><!----></div><div class="items" data-v-723ed679><!--[--><div class="VPSidebarItem level-1 is-link" data-v-723ed679 data-v-723ed679><div class="item" data-v-723ed679><div class="indicator" data-v-723ed679></div><a class="VPLink link link" href="/mpchartDoc/guide/changelog" data-v-723ed679><!--[--><p class="text" data-v-723ed679>更新日志 / Changelog</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><!--]--><!--[--><!--]--></nav></aside><div class="VPContent has-sidebar" id="VPContent" data-v-61838855 data-v-2e59f649><div class="VPDoc has-sidebar has-aside" data-v-2e59f649 data-v-b58deb37><!--[--><!--]--><div class="container" data-v-b58deb37><div class="aside" data-v-b58deb37><div class="aside-curtain" data-v-b58deb37></div><div class="aside-container" data-v-b58deb37><div class="aside-content" data-v-b58deb37><div class="VPDocAside" data-v-b58deb37 data-v-5c8b1248><!--[--><!--]--><!--[--><!--]--><nav aria-labelledby="doc-outline-aria-label" class="VPDocAsideOutline" data-v-5c8b1248 data-v-c4b16e0b><div class="content" data-v-c4b16e0b><div class="outline-marker" data-v-c4b16e0b></div><div aria-level="2" class="outline-title" id="doc-outline-aria-label" role="heading" data-v-c4b16e0b>文档目录</div><ul class="VPDocOutlineItem root" data-v-c4b16e0b data-v-a21f7606><!--[--><!--]--></ul></div></nav><!--[--><!--]--><div class="spacer" data-v-5c8b1248></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-b58deb37><div class="content-container" data-v-b58deb37><!--[--><!--]--><main class="main" data-v-b58deb37><div style="position:relative;" class="vp-doc _mpchartDoc_guide_bar-chart" data-v-b58deb37><div><p>柱状图 柱状图数据初始化：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import {</span></span>
+<span class="line"><span>BarChart, // 柱状图图表类</span></span>
+<span class="line"><span>BarChartModel, // 柱状图配置构建类</span></span>
+<span class="line"><span>BarData, // 柱状图数据包</span></span>
+<span class="line"><span>BarDataSet, // 柱状图数据集合</span></span>
+<span class="line"><span>BarEntry, // 柱状图数据结构</span></span>
+<span class="line"><span>ChartGesture, // 手势事件模式</span></span>
+<span class="line"><span>Description, // 图表Description(描述)部件</span></span>
+<span class="line"><span>EntryOhos, // 图表数据结构基础类</span></span>
+<span class="line"><span>Fill, // 图表填充类型构建类</span></span>
+<span class="line"><span>Highlight, // 图表高亮数据</span></span>
+<span class="line"><span>IBarDataSet, // 柱状图数据集合的操作类</span></span>
+<span class="line"><span>JArrayList, // 工具类：数据集合</span></span>
+<span class="line"><span>Legend, // 图表Legend(图例)部件</span></span>
+<span class="line"><span>LimitLabelPosition, // 图表的LimitLine标签位置枚举类</span></span>
+<span class="line"><span>LimitLine, // 图表LimitLine</span></span>
+<span class="line"><span>MarkerView, // 图表的Marker(标志气泡)部件</span></span>
+<span class="line"><span>OnChartGestureListener, // 手势事件监听</span></span>
+<span class="line"><span>OnChartValueSelectedListener, // 数据选择监听</span></span>
+<span class="line"><span>XAxis, // 图表X轴部件</span></span>
+<span class="line"><span>XAxisPosition, // 图表X轴标签位置枚举类</span></span>
+<span class="line"><span>YAxis, // 图表Y轴部件</span></span>
+<span class="line"><span>YAxisLabelPosition // 图表Y轴标签位置枚举类</span></span>
+<span class="line"><span>} from &#39;@ohos/mpchart&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 构造数据选择监听器</span></span>
+<span class="line"><span>private valueSelectedListener: OnChartValueSelectedListener = {</span></span>
+<span class="line"><span>onValueSelected: (e: EntryOhos, h: Highlight) =&gt; {</span></span>
+<span class="line"><span>// ...todoSomething</span></span>
+<span class="line"><span>},</span></span>
+<span class="line"><span>onNothingSelected: () =&gt; {</span></span>
+<span class="line"><span>// ...todoSomething</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 构造手势识别事件监听器</span></span>
+<span class="line"><span>private chartGestureListener: OnChartGestureListener = {</span></span>
+<span class="line"><span>onChartGestureStart: (isTouchEvent: boolean, me: TouchEvent | GestureEvent, lastPerformedGestureMode: ChartGesture) =&gt; {</span></span>
+<span class="line"><span>},</span></span>
+<span class="line"><span>onChartGestureEnd: (isTouchEvent: boolean, me: TouchEvent | GestureEvent, lastPerformedGestureMode: ChartGesture) =&gt; {</span></span>
+<span class="line"><span>// ...todoSomething</span></span>
+<span class="line"><span>},</span></span>
+<span class="line"><span>onChartLongPressed: (isTouchEvent: boolean, me: TouchEvent | GestureEvent) =&gt; {</span></span>
+<span class="line"><span>// ...todoSomething</span></span>
+<span class="line"><span>},</span></span>
+<span class="line"><span>onChartDoubleTapped: (isTouchEvent: boolean, me: TouchEvent | GestureEvent) =&gt; {</span></span>
+<span class="line"><span>// ...todoSomething</span></span>
+<span class="line"><span>},</span></span>
+<span class="line"><span>onChartSingleTapped: (isTouchEvent: boolean, me: TouchEvent | GestureEvent) =&gt; {</span></span>
+<span class="line"><span>// ...todoSomething</span></span>
+<span class="line"><span>},</span></span>
+<span class="line"><span>onChartFling: (isTouchEvent: boolean, me1: TouchEvent | GestureEvent, me2: TouchEvent, velocityX: number, velocityY: number) =&gt; {</span></span>
+<span class="line"><span>// ...todoSomething</span></span>
+<span class="line"><span>},</span></span>
+<span class="line"><span>onChartScale: (isTouchEvent: boolean, me: TouchEvent | GestureEvent, scaleX: number, scaleY: number) =&gt; {</span></span>
+<span class="line"><span>// ...todoSomething</span></span>
+<span class="line"><span>},</span></span>
+<span class="line"><span>onChartTranslate: (isTouchEvent: boolean, me: TouchEvent | GestureEvent, dX: number, dY: number) =&gt; {</span></span>
+<span class="line"><span>// ...todoSomething</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 图表数据初始化</span></span>
+<span class="line"><span>aboutToAppear() {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  	// Step1:必须：初始化图表配置构建类</span></span>
+<span class="line"><span>    this.model = new BarChartModel();</span></span>
+<span class="line"><span>    </span></span>
+<span class="line"><span>    // Step2:配置图表指定样式，各部件间没有先后之分</span></span>
+<span class="line"><span>    </span></span>
+<span class="line"><span>    // 为图表添加数据选择的监听器</span></span>
+<span class="line"><span>    this.model.setOnChartValueSelectedListener(this.valueSelectedListener);</span></span>
+<span class="line"><span>    // 为图表添加手势识别监听器</span></span>
+<span class="line"><span>    this.model.setOnChartGestureListener(this.chartGestureListener);</span></span>
+<span class="line"><span>	// 获取图表描述部件，设置图表描述部件不可用，即图表不进行绘制描述部件</span></span>
+<span class="line"><span>    let description: Description | null = this.model.getDescription()</span></span>
+<span class="line"><span>    if (description) {</span></span>
+<span class="line"><span>      description.setEnabled(false);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>	// 获取图表图例部件，设置图表图例部件不可用</span></span>
+<span class="line"><span>    let l: Legend | null = this.model.getLegend();</span></span>
+<span class="line"><span>    if (l) {</span></span>
+<span class="line"><span>      l.setEnabled(false);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>    // 设置图表数据最大的绘制数，如果超过该数值，则不进行绘制图表的数值标签</span></span>
+<span class="line"><span>    this.model.setMaxVisibleValueCount(40);</span></span>
+<span class="line"><span>	// 是否绘制图表的背景色，绘制范围为图表柱状图的绘制范围，不包含轴线之外的部分</span></span>
+<span class="line"><span>    this.model.setDrawGridBackground(false);</span></span>
+<span class="line"><span>    // 设置图表的背景色，颜色的规格需要满足CanvasRenderingContext2D.fillstyle/strokestyle规格</span></span>
+<span class="line"><span>    this.model.setGridBackgroundColor(&#39;#500000ff&#39;)</span></span>
+<span class="line"><span>    // 设置不绘制柱状图的柱体阴影背景</span></span>
+<span class="line"><span>    this.model.setDrawBarShadow(false);</span></span>
+<span class="line"><span>	// 设置柱状图的数值在柱体上方</span></span>
+<span class="line"><span>    this.model.setDrawValueAboveBar(false);</span></span>
+<span class="line"><span>    // 设置柱状图的高亮范围是否为整个柱体，只在堆叠柱状图中有区别</span></span>
+<span class="line"><span>    this.model.setHighlightFullBarEnabled(false);</span></span>
+<span class="line"><span>	// 为左Y轴设置LimitLine,可设置限制线的宽度，线段样式，限制标签的位置，标签字体大小等</span></span>
+<span class="line"><span>    this.limitLine1 = new LimitLine(120, &#39;Upper Limit&#39;);</span></span>
+<span class="line"><span>    this.limitLine1.setLineWidth(4);</span></span>
+<span class="line"><span>    this.limitLine1.enableDashedLine(10, 10, 0);</span></span>
+<span class="line"><span>    this.limitLine1.setLabelPosition(LimitLabelPosition.RIGHT_TOP);</span></span>
+<span class="line"><span>    this.limitLine1.setTextSize(10);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    this.limitLine2 = new LimitLine(50, &#39;Lower Limit&#39;);</span></span>
+<span class="line"><span>    this.limitLine2.setLineWidth(4);</span></span>
+<span class="line"><span>    this.limitLine2.enableDashedLine(10, 10, 0);</span></span>
+<span class="line"><span>    this.limitLine2.setLineColor(Color.Yellow);</span></span>
+<span class="line"><span>    this.limitLine2.setLabelPosition(LimitLabelPosition.RIGHT_BOTTOM);</span></span>
+<span class="line"><span>    this.limitLine2.setTextSize(10);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    // 设置图表左Y轴信息</span></span>
+<span class="line"><span>    this.leftAxis = this.model.getAxisLeft();</span></span>
+<span class="line"><span>    if (this.leftAxis) {</span></span>
+<span class="line"><span>      this.leftAxis.setAxisMinimum(0); // this replaces setStartAtZero(true)</span></span>
+<span class="line"><span>      this.leftAxis.setDrawLimitLinesBehindData(false);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>      // 添加LimitLines</span></span>
+<span class="line"><span>      this.leftAxis.addLimitLine(this.limitLine1);</span></span>
+<span class="line"><span>      this.leftAxis.addLimitLine(this.limitLine2);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>	// 设置图表右Y轴信息</span></span>
+<span class="line"><span>    this.rightAxis = this.model.getAxisRight();</span></span>
+<span class="line"><span>    if (this.rightAxis) {</span></span>
+<span class="line"><span>      this.rightAxis.setEnabled(false);</span></span>
+<span class="line"><span>      this.rightAxis.setAxisMinimum(0);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>	// 设置X轴信息</span></span>
+<span class="line"><span>    this.xAxis = this.model.getXAxis();</span></span>
+<span class="line"><span>    if (this.xAxis) {</span></span>
+<span class="line"><span>      this.xAxis.setPosition(XAxisPosition.BOTTOM);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>	// 为图表设置markerView</span></span>
+<span class="line"><span>    this.normalMarker = new MarkerView();</span></span>
+<span class="line"><span>    this.model.setMarker(this.normalMarker);</span></span>
+<span class="line"><span>    // 也可设置定义图表MarkerView</span></span>
+<span class="line"><span>    this.stackMarker = new CustomMarkerView();</span></span>
+<span class="line"><span>	// 生成单一颜色数据</span></span>
+<span class="line"><span>    this.data = this.getNormalData();</span></span>
+<span class="line"><span>    // 将数据与图表配置类绑定</span></span>
+<span class="line"><span>    this.model.setData(this.data);</span></span>
+<span class="line"><span>    // 设置图表最大的X轴显示范围，如不设置，则默认显示全部数据</span></span>
+<span class="line"><span>    this.model.setVisibleXRangeMaximum(20);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>private getNormalData(): BarData {</span></span>
+<span class="line"><span>let values: JArrayList&lt;BarEntry&gt; = new JArrayList&lt;BarEntry&gt;();</span></span>
+<span class="line"><span>values.add(new BarEntry(1, 73.3));</span></span>
+<span class="line"><span>values.add(new BarEntry(2, 5.4));</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let dataSet: BarDataSet = new BarDataSet(values, &#39;DataSet&#39;);</span></span>
+<span class="line"><span>    dataSet.setHighLightColor(Color.Black);</span></span>
+<span class="line"><span>    dataSet.setDrawIcons(false);</span></span>
+<span class="line"><span>    // 为柱体添加颜色信息</span></span>
+<span class="line"><span>    dataSet.setColorByColor(Color.Pink);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let dataSetList: JArrayList&lt;IBarDataSet&gt; = new JArrayList&lt;IBarDataSet&gt;();</span></span>
+<span class="line"><span>    dataSetList.add(dataSet);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let barData: BarData = new BarData(dataSetList);</span></span>
+<span class="line"><span>    //设置柱状图宽度</span></span>
+<span class="line"><span>    barData.setBarWidth(0.85);</span></span>
+<span class="line"><span>    //设置顶部圆角半径</span></span>
+<span class="line"><span>    barData.setTopRadius(5);</span></span>
+<span class="line"><span>    return barData;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>private getGradientData(): BarData {</span></span>
+<span class="line"><span>let values: JArrayList&lt;BarEntry&gt; = new JArrayList&lt;BarEntry&gt;();</span></span>
+<span class="line"><span>values.add(new BarEntry(1, 32.9));</span></span>
+<span class="line"><span>values.add(new BarEntry(2, 44.7));</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let dataSet: BarDataSet = new BarDataSet(values, &#39;DataSet&#39;);</span></span>
+<span class="line"><span>    dataSet.setHighLightColor(Color.Black);</span></span>
+<span class="line"><span>    dataSet.setDrawIcons(false);</span></span>
+<span class="line"><span>    let startColor1: string = &#39;#ffffbb33&#39;;</span></span>
+<span class="line"><span>    let startColor2: string = &#39;#ff33b5e5&#39;;</span></span>
+<span class="line"><span>    let startColor3: string = &#39;#ffffbb33&#39;;</span></span>
+<span class="line"><span>    let startColor4: string = &#39;#ff99cc00&#39;;</span></span>
+<span class="line"><span>    let startColor5: string = &#39;#ffff4444&#39;;</span></span>
+<span class="line"><span>    let endColor1: string = &#39;#ff0099cc&#39;;</span></span>
+<span class="line"><span>    let endColor2: string = &#39;#ffaa66cc&#39;;</span></span>
+<span class="line"><span>    let endColor3: string = &#39;#ff669900&#39;;</span></span>
+<span class="line"><span>    let endColor4: string = &#39;#ffcc0000&#39;;</span></span>
+<span class="line"><span>    let endColor5: string = &#39;#ffff8800&#39;;</span></span>
+<span class="line"><span>    let gradientFills: JArrayList&lt;Fill&gt; = new JArrayList&lt;Fill&gt;();</span></span>
+<span class="line"><span>    gradientFills.add(new Fill(startColor1, endColor1));</span></span>
+<span class="line"><span>    gradientFills.add(new Fill(startColor2, endColor2));</span></span>
+<span class="line"><span>    gradientFills.add(new Fill(startColor3, endColor3));</span></span>
+<span class="line"><span>    gradientFills.add(new Fill(startColor4, endColor4));</span></span>
+<span class="line"><span>    gradientFills.add(new Fill(startColor5, endColor5));</span></span>
+<span class="line"><span>	// 为柱体添加渐变的颜色信息</span></span>
+<span class="line"><span>    dataSet.setFills(gradientFills);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let dataSetList: JArrayList&lt;IBarDataSet&gt; = new JArrayList&lt;IBarDataSet&gt;();</span></span>
+<span class="line"><span>    dataSetList.add(dataSet);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let barData: BarData = new BarData(dataSetList);</span></span>
+<span class="line"><span>    barData.setBarWidth(0.85);</span></span>
+<span class="line"><span>    return barData;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>private getStackData(): BarData {</span></span>
+<span class="line"><span>let values: JArrayList&lt;BarEntry&gt; = new JArrayList&lt;BarEntry&gt;();</span></span>
+<span class="line"><span>values.add(new BarEntry(1, [38.0, 28.0, 39.8]));</span></span>
+<span class="line"><span>values.add(new BarEntry(2, [18.2, 16.1, 16.1]));</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let set1: BarDataSet | null = null;</span></span>
+<span class="line"><span>    set1 = new BarDataSet(values, &quot;Statistics Vienna 2014&quot;);</span></span>
+<span class="line"><span>    set1.setDrawIcons(false);</span></span>
+<span class="line"><span>    // 为柱体添加指定分段的颜色信息</span></span>
+<span class="line"><span>    set1.setColorsByArr([Color.Red, Color.Green, Color.Pink]);</span></span>
+<span class="line"><span>    set1.setStackLabels([&quot;Births&quot;, &quot;Divorces&quot;, &quot;Marriages&quot;]);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let dataSets: JArrayList&lt;IBarDataSet&gt; = new JArrayList&lt;IBarDataSet&gt;();</span></span>
+<span class="line"><span>    dataSets.add(set1);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    let data: BarData = new BarData(dataSets);</span></span>
+<span class="line"><span>    data.setValueTextColor(Color.White);</span></span>
+<span class="line"><span>    return data;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>添加数据到自定义竖向柱状图表组件 // 为组件设置配置构建类，如果需要在页面初始化就显示图表，则需要在aboutToAppear方法中完成图表数据构建 // 如果在之后通过事件触发， // 可通过barData.notifyDataSetChanged();来触发数据更新， // 可通过this.model.notifyDataSetChanged();来触发坐标轴数据更新， // 可通过this.model.invalidate();来触发绘制更新。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>BarChart({ model: this.model })</span></span>
+<span class="line"><span>.width(&#39;100%&#39;)</span></span>
+<span class="line"><span>.height(&#39;30%&#39;)</span></span></code></pre></div></div></div></main><footer class="VPDocFooter" data-v-b58deb37 data-v-4978e393><!--[--><!--]--><!----><nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-4978e393><span class="visually-hidden" id="doc-footer-aria-label" data-v-4978e393>Pager</span><div class="pager" data-v-4978e393><a class="VPLink link pager-link prev" href="/mpchartDoc/guide/getting-started" data-v-4978e393><!--[--><span class="desc" data-v-4978e393>Previous page</span><span class="title" data-v-4978e393>快速开始 / Start</span><!--]--></a></div><div class="pager" data-v-4978e393><a class="VPLink link pager-link next" href="/mpchartDoc/guide/line-chart" data-v-4978e393><!--[--><span class="desc" data-v-4978e393>Next page</span><span class="title" data-v-4978e393>线形图 / LineChart</span><!--]--></a></div></nav></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><footer class="VPFooter has-sidebar" data-v-61838855 data-v-b38b4186><div class="container" data-v-b38b4186><p class="message" data-v-b38b4186>基于 Apache License 2.0 许可发布</p><p class="copyright" data-v-b38b4186>版权所有 </p></div></footer><!--[--><!--]--></div></div>
+    <script>window.__VP_HASH_MAP__=JSON.parse("{\"guide_api-axisbase.md\":\"oSCkXtyD\",\"guide_api-barlinechartbasemodel.md\":\"C8HmSYgZ\",\"guide_api-barlinescattercandlebubbledataset.md\":\"4Lp2XzHX\",\"guide_api-chartdata.md\":\"DBV4PCkU\",\"guide_api-chartmodel.md\":\"D62SA9WP\",\"guide_api-componentbase.md\":\"D8X4EnE4\",\"guide_api-linescattercandleradardataset.md\":\"CBgtTqx0\",\"guide_api-markerview.md\":\"B-4Z29Ta\",\"guide_api-waterfalldataset.md\":\"BVV6xxOx\",\"guide_api-xaxis.md\":\"BhuTPf3w\",\"guide_api-yaxis.md\":\"DxkRH8VJ\",\"guide_bar-chart.md\":\"Daw-mIWe\",\"guide_bubble-chart.md\":\"BJAPsKPj\",\"guide_candle-chart.md\":\"CEHrTvyH\",\"guide_changelog.md\":\"CnjLIgw3\",\"guide_combined-chart.md\":\"BKKzWVgy\",\"guide_faqs.md\":\"0bmYmmGR\",\"guide_getting-started.md\":\"__q0YIn0\",\"guide_line-chart.md\":\"CT6okKw9\",\"guide_pie-chart.md\":\"Co8DVZNT\",\"guide_radar-chart.md\":\"DBtH5g90\",\"guide_scatter-chart.md\":\"DxXbWNNK\",\"guide_waterfall-chart.md\":\"D9D_zcPV\",\"index.md\":\"C7enejxR\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"en-US\",\"dir\":\"ltr\",\"title\":\"MpChart 图表库\",\"description\":\"支持多种类型的OpenHarmony图表库\",\"base\":\"/mpchartDoc/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"logo\":\"/logo.svg\",\"nav\":[{\"text\":\"首页\",\"link\":\"/\"},{\"text\":\"文档\",\"link\":\"/guide/getting-started\"}],\"sidebar\":[{\"text\":\"使用说明\",\"items\":[{\"text\":\"快速开始 / Start\",\"link\":\"/guide/getting-started\"},{\"text\":\"柱状图 / BarChart\",\"link\":\"/guide/bar-chart\"},{\"text\":\"线形图 / LineChart\",\"link\":\"/guide/line-chart\"},{\"text\":\"饼状图 / PieChart\",\"link\":\"/guide/pie-chart\"},{\"text\":\"气泡图 / BubbleChart\",\"link\":\"/guide/bubble-chart\"},{\"text\":\"蜡烛图 / CandleChart\",\"link\":\"/guide/candle-chart\"},{\"text\":\"组合图 / CombinedChart\",\"link\":\"/guide/combined-chart\"},{\"text\":\"雷达图 / RadarChart\",\"link\":\"/guide/radar-chart\"},{\"text\":\"散点图 / ScatterChart\",\"link\":\"/guide/scatter-chart\"},{\"text\":\"瀑布图 / WaterfallChart\",\"link\":\"/guide/waterfall-chart\"}]},{\"text\":\"接口说明\",\"items\":[{\"text\":\"1.ChartModel\",\"link\":\"/guide/api-ChartModel\"},{\"text\":\"2.BarLineChartBaseModel\",\"link\":\"/guide/api-BarLineChartBaseModel\"},{\"text\":\"3.ComponentBase\",\"link\":\"/guide/api-ComponentBase\"},{\"text\":\"4.AxisBase\",\"link\":\"/guide/api-AxisBase\"},{\"text\":\"5.XAxis\",\"link\":\"/guide/api-XAxis\"},{\"text\":\"6.YAxis\",\"link\":\"/guide/api-YAxis\"},{\"text\":\"7.自定义MarkerView传入\",\"link\":\"/guide/api-MarkerView\"},{\"text\":\"8.WaterfallDataSet\",\"link\":\"/guide/api-WaterfallDataSet\"},{\"text\":\"9.ChartData\",\"link\":\"/guide/api-ChartData\"},{\"text\":\"10.BarLineScatterCandleBubbleDataSet\",\"link\":\"/guide/api-BarLineScatterCandleBubbleDataSet\"},{\"text\":\"11.LineScatterCandleRadarDataSet\",\"link\":\"/guide/api-LineScatterCandleRadarDataSet\"}]},{\"text\":\"常见问题\",\"items\":[{\"text\":\"常见问题 / FAQ\",\"link\":\"/guide/faqs\"}]},{\"text\":\"其它\",\"items\":[{\"text\":\"更新日志 / Changelog\",\"link\":\"/guide/changelog\"}]}],\"outline\":{\"level\":[2,4],\"label\":\"文档目录\"},\"footer\":{\"message\":\"基于 Apache License 2.0 许可发布\",\"copyright\":\"版权所有 \"},\"socialLinks\":[{\"icon\":\"gitee\",\"link\":\"https://gitee.com/openharmony-tpc/ohos_mpchart\"}],\"lastUpdated\":true},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":true}");</script>
+    
+  </body>
+</html>
