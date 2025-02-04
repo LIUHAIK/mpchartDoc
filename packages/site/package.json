@@ -1,0 +1,21 @@
+{
+    "name": "site",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "_init": "vitepress init",
+        "dev": "vitepress dev",
+        "build": "vitepress build",
+        "preview": "vitepress preview"
+    },
+    "devDependencies": {
+        "@codemirror/autocomplete": "^6.18.2",
+        "dayjs": "^1.11.13",
+        "vitepress": "1.5.0"
+    },
+    "dependencies": {
+        "@varlet/touch-emulator": "^3.6.3",
+        "naive-ui": "^2.41.0"
+    }
+}

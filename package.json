@@ -1,0 +1,24 @@
+{
+    "name": "ohos_mpchart",
+    "version": "3.20.0",
+    "description": "mpchart是一个包含各种类型图表的图表库，主要用于业务数据汇总，例如销售数据走势图，股价走势图等场景中使用，方便开发者快速实现图表UI，mpchart主要包括线形图、柱状图、饼状图、蜡烛图、气泡图、雷达图、瀑布图等自定义图表库。",
+    "repository": "https://gitee.com/openharmony-tpc/ohos_mpchart",
+    "private": true,
+    "scripts": {
+        "site": "pnpm -F site dev",
+        "site:build": "pnpm -F site build",
+        "release": "pnpm publish -r"
+    },
+    "keywords": [
+        "MPChart",
+        "Charts",
+        "Chart"
+    ],
+    "author": "",
+    "license": "Apache License 2.0",
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.1.4",
+        "vite": "^5.4.10",
+        "vue": "^3.5.12"
+    }
+}
