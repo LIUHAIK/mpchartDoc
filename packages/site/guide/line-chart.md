@@ -1,186 +1,211 @@
-线形图
-线形图数据初始化：
-```
-import {
-JArrayList, // 工具类：数据集合
-XAxis, // 图表X轴部件
-XAxisPosition, // 图表X轴标签位置枚举类
-YAxis, // 图表Y轴部件
-Description, // 图表描述标签
-Legend, // 图表Legend(图例)部件
-OnChartValueSelectedListener, //
-Highlight,// 图表高亮数据
-EntryOhos,// 图表数据结构基础类
-YAxisLabelPosition,// 图表Y轴标签位置枚举类
-LineDataSet, //线形图数据集合
-ILineDataSet, // 线形图数据集合的操作类
-LineData, //线形图数据包
-Mode, //线形图形状
-LineChart, // 线形图图表类
-LineChartModel,// 线形图配置构建类
-LimitLine, // 图表LimitLine
-LimitLabelPosition, // 图表的LimitLine标签位置枚举类
-ChartColorStop, //颜色类
-LegendForm, //图例形状
-} from '@ohos/mpchart';
+# 线形图组件使用指南
 
-// 构造数据选择监听器
-private valueSelectedListener: OnChartValueSelectedListener = {
-onValueSelected: (e: EntryOhos, h: Highlight) => {
-// ...todoSomething
-},
-onNothingSelected: () => {
-// ...todoSomething
-}
-}
+本文档将指导你如何使用线形图组件，并通过代码示例展示如何初始化数据、配置图表样式以及如何将图表添加到页面中。
 
-// 图表数据初始化
-aboutToAppear() {
+1. 引入依赖
 
-  	// Step1:必须：初始化图表配置构建类
+   在使用线形图组件之前，需要引入相关的依赖模块：
+   ```typescript
+   import {
+   JArrayList,
+   XAxis,
+   XAxisPosition,
+   YAxis,
+   Description,
+   Legend,
+   OnChartValueSelectedListener,
+   Highlight,
+   EntryOhos,
+   YAxisLabelPosition,
+   LineDataSet,
+   ILineDataSet,
+   LineData,
+   Mode,
+   LineChart,
+   LineChartModel,
+   LimitLine,
+   LimitLabelPosition,
+   ChartColorStop,
+   LegendForm
+   } from '@ohos/mpchart';
+   ```
+   
+2. 初始化图表数据
+
+   2.1 构造数据选择监听器
+
+   数据选择监听器用于监听图表数据点的选中事件：
+   ```typescript
+   private valueSelectedListener: OnChartValueSelectedListener = {
+   onValueSelected: (e: EntryOhos, h: Highlight) => {
+   // 当某个数据点被选中时触发
+   console.log('Data point selected:', e);
+   },
+   onNothingSelected: () => {
+   // 当没有数据点被选中时触发
+   console.log('No data point selected');
+   }
+   };
+   ```
+   2.2 图表数据初始化
+
+   在 aboutToAppear 方法中初始化图表数据：
+
+    ```typescript
+    aboutToAppear() {
+    // Step 1: 初始化图表配置构建类
     this.model = new LineChartModel();
-    
-    // Step2:配置图表指定样式，各部件间没有先后之分
-    
-    // 为图表添加数据选择的监听器
+
+    // Step 2: 配置图表指定样式
     this.model.setOnChartValueSelectedListener(this.valueSelectedListener);
-	// 获取图表描述部件，设置图表描述部件不可用，即图表不进行绘制描述部件
-    let description: Description | null = this.model.getDescription()
+    
+    // 配置图表描述
+    let description: Description | null = this.model.getDescription();
     if (description) {
-      description.setEnabled(false);
+    description.setEnabled(false); // 不显示描述
     }
     
-	// 获取图表图例部件，设置图表图例形状为线形
+    // 配置图例
     let legend: Legend | null = this.model.getLegend();
     if (legend) {
-      legend.setEnabled(true);
-      // draw legend entries as lines
-      legend.setForm(LegendForm.LINE);
+    legend.setEnabled(true); // 显示图例
+    legend.setForm(LegendForm.LINE); // 图例形状为线形
     }
     
-    // 设置图表数据最大的绘制数，如果超过该数值，则不进行绘制图表的数值标签
+    // 设置最大可见值数量
     this.model.setMaxVisibleValueCount(60);
     
-	// 为左Y轴设置LimitLine,可设置限制线的宽度，线段样式，限制标签的位置，标签字体大小等
+    // 配置左Y轴
     this.limitLine1 = new LimitLine(120, 'Upper Limit');
     this.limitLine1.setLineWidth(4);
-    //设置虚线样式
     this.limitLine1.enableDashedLine(10, 10, 0);
-    //设置标签位置
     this.limitLine1.setLabelPosition(LimitLabelPosition.RIGHT_TOP);
     this.limitLine1.setTextSize(10);
-
+    
     this.limitLine2 = new LimitLine(50, 'Lower Limit');
     this.limitLine2.setLineWidth(4);
     this.limitLine2.enableDashedLine(10, 10, 0);
     this.limitLine2.setLineColor(Color.Yellow);
     this.limitLine2.setLabelPosition(LimitLabelPosition.RIGHT_BOTTOM);
     this.limitLine2.setTextSize(10);
-
-    // 设置图表左Y轴信息
+    
     this.leftAxis = this.model.getAxisLeft();
     if (this.leftAxis) {
-      //设置绘制标签个数
-      this.leftAxis.setLabelCount(8, false);
-      //设置标签位置
-      this.leftAxis.setPosition(YAxisLabelPosition.OUTSIDE_CHART)
-      //设置距离顶部距离
-      this.leftAxis.setSpaceTop(15);
-      //设置最大值
-      this.leftAxis.setAxisMinimum(0);
-      //设置最小值
-      this.leftAxis.setAxisMaximum(200);
+    this.leftAxis.setLabelCount(8, false); // 设置标签数量
+    this.leftAxis.setPosition(YAxisLabelPosition.OUTSIDE_CHART); // 标签位置
+    this.leftAxis.setSpaceTop(15); // 距离顶部距离
+    this.leftAxis.setAxisMinimum(0); // 最小值
+    this.leftAxis.setAxisMaximum(200); // 最大值
+    this.leftAxis.addLimitLine(this.limitLine1); // 添加限制线
+    this.leftAxis.addLimitLine(this.limitLine2);
     }
-
-	// 设置图表右Y轴信息
+    
+    // 配置右Y轴
     this.rightAxis = this.model.getAxisRight();
     if (this.rightAxis) {
-      this.rightAxis.setLabelCount(8, false);
-      this.rightAxis.setDrawGridLines(false);
-      this.rightAxis.setSpaceTop(15);
-      this.rightAxis.setAxisMinimum(0);
-      this.rightAxis.setAxisMaximum(200);
-      this.rightAxis.setEnabled(false);
+    this.rightAxis.setLabelCount(8, false);
+    this.rightAxis.setDrawGridLines(false);
+    this.rightAxis.setSpaceTop(15);
+    this.rightAxis.setAxisMinimum(0);
+    this.rightAxis.setAxisMaximum(200);
+    this.rightAxis.setEnabled(false); // 不启用右Y轴
     }
     
-	// 设置X轴信息
-        this.xAxis = this.model.getXAxis();
+    // 配置X轴
+    this.xAxis = this.model.getXAxis();
     if (this.xAxis) {
-      this.xAxis.setPosition(XAxisPosition.BOTTOM);
-      this.xAxis.setDrawGridLines(false);
-      this.xAxis.setGranularity(1);
-      this.xAxis.setLabelCount(7);
+    this.xAxis.setPosition(XAxisPosition.BOTTOM); // X轴位置
+    this.xAxis.setDrawGridLines(false); // 不绘制网格线
+    this.xAxis.setGranularity(1); // 最小轴步长
+    this.xAxis.setLabelCount(7); // 标签数量
     }
     
-	// 为图表设置markerView
+    // 设置MarkerView
     this.normalMarker = new MarkerView();
     this.model.setMarker(this.normalMarker);
-    // 也可设置定义图表MarkerView
-    this.stackMarker = new CustomMarkerView();
-    // 生成图表数据
+    
+    // 设置数据
     let lineData: LineData = this.getLineData();
-    // 将数据与图表配置类绑定
     this.model.setData(lineData);
-    // 设置图表最大的X轴显示范围，如不设置，则默认显示全部数据
+    
+    // 设置最大X轴显示范围
     this.model.setVisibleXRangeMaximum(20);
-}
-
-private getLineData(): LineData {
-
-    let start: number = 1;
-    let values: JArrayList<EntryOhos> = new JArrayList<EntryOhos>();
-    for (let i = start; i < 20; i++) {
-      let val = Number(Math.random() * 141);
-
-      if (Math.random() * 100 < 25) {
-        values.add(new EntryOhos(i, val));
-      } else {
-        values.add(new EntryOhos(i, val));
-      }
     }
+   ```
+   
+2.3 数据生成方法
 
-    this.dataSet = new LineDataSet(values, 'DataSet');
-    this.dataSet.setHighLightColor(Color.Black);
-    this.dataSet.setDrawIcons(false);
+2.3.1 生成线形图数据
+```typescript
+private getLineData(): LineData {
+let start: number = 1;
+let values: JArrayList<EntryOhos> = new JArrayList<EntryOhos>();
+for (let i = start; i < 20; i++) {
+let val = Number(Math.random() * 141); // 随机生成数据
 
-    this.dataSet.setMode(Mode.LINEAR); //直线模式
-    this.dataSet.setDrawCircles(true); //折线点画圆圈
-    this.dataSet.setDrawCircleHole(false); //设置内部孔
-    this.dataSet.setColorByColor(Color.Black); //设置折线颜色
+    if (Math.random() * 100 < 25) {
+      values.add(new EntryOhos(i, val));
+    } else {
+      values.add(new EntryOhos(i, val));
+    }
+}
 
-    //渐变色填充
-    let gradientFillColor = new JArrayList<ChartColorStop>();
-    gradientFillColor.add(["#0C0099CC", 0.2]);
-    gradientFillColor.add(["#7F0099CC", 0.4]);
-    gradientFillColor.add(["#0099CC", 1.0]);
-    this.dataSet.setGradientFillColor(gradientFillColor);
-    this.dataSet.setDrawFilled(true);
+this.dataSet = new LineDataSet(values, 'DataSet');
+this.dataSet.setHighLightColor(Color.Black);
+this.dataSet.setDrawIcons(false);
 
+this.dataSet.setMode(Mode.LINEAR); // 直线模式
+this.dataSet.setDrawCircles(true); // 折线点画圆圈
+this.dataSet.setDrawCircleHole(false); // 不显示内部孔
+this.dataSet.setColorByColor(Color.Black); // 设置折线颜色
 
-    // 设置数据点的颜色
-    this.dataSet.setCircleColor(Color.Blue); // 可以设置为想要的颜色
+// 渐变色填充
+let gradientFillColor = new JArrayList<ChartColorStop>();
+gradientFillColor.add(["#0C0099CC", 0.2]);
+gradientFillColor.add(["#7F0099CC", 0.4]);
+gradientFillColor.add(["#0099CC", 1.0]);
+this.dataSet.setGradientFillColor(gradientFillColor);
+this.dataSet.setDrawFilled(true);
 
-    // 设置数据点的半径
-    this.dataSet.setCircleRadius(4); // 设置半径大小
-    this.dataSet.setCircleHoleRadius(2); //设置内径
+// 设置数据点的颜色
+this.dataSet.setCircleColor(Color.Blue); // 数据点颜色
+this.dataSet.setCircleRadius(4); // 数据点半径
+this.dataSet.setCircleHoleRadius(2); // 数据点内径
 
-    let dataSetList: JArrayList<ILineDataSet> = new JArrayList<ILineDataSet>();
-    dataSetList.add(this.dataSet);
+let dataSetList: JArrayList<ILineDataSet> = new JArrayList<ILineDataSet>();
+dataSetList.add(this.dataSet);
 
-    let lineData: LineData = new LineData(dataSetList);
-    return lineData
+let lineData: LineData = new LineData(dataSetList);
+return lineData;
 }
 ```
 
+3. 将线形图添加到页面
 
-添加数据到自定义线形图表组件
-// 为组件设置配置构建类，如果需要在页面初始化就显示图表，则需要在aboutToAppear方法中完成图表数据构建
-// 如果在之后通过事件触发，
-// 可通过lineData.notifyDataSetChanged();来触发数据更新，
-// 可通过this.model.notifyDataSetChanged();来触发坐标轴数据更新，
-// 可通过this.model.invalidate();来触发绘制更新。
-```
-LineChart({ model: this.model })
-.width('100%')
-.height('30%')
-```
+   在页面中使用 LineChart 组件，并绑定配置类：
+   ```typescript
+   LineChart({ model: this.model })
+   .width('100%')
+   .height('30%')
+   ```
+4. 数据更新
+
+   如果需要在页面加载后动态更新数据，可以通过以下方法：
+   更新数据集后调用 notifyDataSetChanged：
+    ```typescript
+    this.dataSet = this.getLineData(); // 或其他数据生成方法
+    this.model.setData(this.dataSet);
+    this.model.notifyDataSetChanged();
+    ```
+   
+   如果需要更新坐标轴数据，调用：
+   
+   ```typescript
+   this.model.notifyDataSetChanged();
+   ```
+   如果需要重新绘制图表，调用：
+   ```typescript
+   this.model.invalidate();
+   ```
+5. 总结
+   通过以上步骤，你可以轻松地初始化线形图数据、配置图表样式，并将其添加到页面中。你可以根据需要选择不同的数据生成方法，并通过监听器实现交互功能。

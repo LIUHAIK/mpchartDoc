@@ -22,10 +22,53 @@ public addLimitLine(limitLine: LimitLine): void;
 
 参数：
 
-| 参数名    | 类型      | 必填 | 说明                     |
-| --------- | --------- | ---- | ------------------------ |
-| limitLine | LimitLine | 是   | 为坐标轴添加限制线对象。 |
+<table>
+  <thead>
+    <tr>
+      <th>参数名</th>
+      <th>类型</th>
+      <th>必填</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>limitLine</td>
+      <td><span class="highlight yellow">LimitLine</span></td>
+      <td><span class="highlight blue">是</span></td>
+      <td>为坐标轴添加限制线对象。</td>
+    </tr>
+  </tbody>
+</table>
 
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  .highlight {
+    display: inline-block;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  .blue {
+    background-color: #e6f7ff;
+    color: #1890ff;
+  }
+  .yellow {
+    background-color: #fff7e6;
+    color: #f5a623;
+  }
+</style>
 ## **2.calculate**
 
 public calculate(dataMin: number, dataMax: number): void;
